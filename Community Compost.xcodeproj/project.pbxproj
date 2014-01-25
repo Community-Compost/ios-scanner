@@ -1,0 +1,490 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E18B6CBD189374EA00968CF5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E18B6CBC189374EA00968CF5 /* Foundation.framework */; };
+		E18B6CBF189374EA00968CF5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E18B6CBE189374EA00968CF5 /* CoreGraphics.framework */; };
+		E18B6CC1189374EA00968CF5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E18B6CC0189374EA00968CF5 /* UIKit.framework */; };
+		E18B6CC7189374EA00968CF5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E18B6CC5189374EA00968CF5 /* InfoPlist.strings */; };
+		E18B6CC9189374EA00968CF5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E18B6CC8189374EA00968CF5 /* main.m */; };
+		E18B6CCD189374EA00968CF5 /* CCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E18B6CCC189374EA00968CF5 /* CCAppDelegate.m */; };
+		E18B6CD0189374EA00968CF5 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E18B6CCE189374EA00968CF5 /* Main_iPhone.storyboard */; };
+		E18B6CD3189374EA00968CF5 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E18B6CD1189374EA00968CF5 /* Main_iPad.storyboard */; };
+		E18B6CD6189374EA00968CF5 /* CCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E18B6CD5189374EA00968CF5 /* CCViewController.m */; };
+		E18B6CD8189374EA00968CF5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E18B6CD7189374EA00968CF5 /* Images.xcassets */; };
+		E18B6CDF189374EA00968CF5 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E18B6CDE189374EA00968CF5 /* XCTest.framework */; };
+		E18B6CE0189374EA00968CF5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E18B6CBC189374EA00968CF5 /* Foundation.framework */; };
+		E18B6CE1189374EA00968CF5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E18B6CC0189374EA00968CF5 /* UIKit.framework */; };
+		E18B6CE9189374EA00968CF5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E18B6CE7189374EA00968CF5 /* InfoPlist.strings */; };
+		E18B6CEB189374EA00968CF5 /* Community_CompostTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E18B6CEA189374EA00968CF5 /* Community_CompostTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E18B6CE2189374EA00968CF5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E18B6CB1189374EA00968CF5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E18B6CB8189374EA00968CF5;
+			remoteInfo = "Community Compost";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E18B6CB9189374EA00968CF5 /* Community Compost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Community Compost.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E18B6CBC189374EA00968CF5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E18B6CBE189374EA00968CF5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		E18B6CC0189374EA00968CF5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		E18B6CC4189374EA00968CF5 /* Community Compost-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Community Compost-Info.plist"; sourceTree = "<group>"; };
+		E18B6CC6189374EA00968CF5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E18B6CC8189374EA00968CF5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E18B6CCA189374EA00968CF5 /* Community Compost-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Community Compost-Prefix.pch"; sourceTree = "<group>"; };
+		E18B6CCB189374EA00968CF5 /* CCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCAppDelegate.h; sourceTree = "<group>"; };
+		E18B6CCC189374EA00968CF5 /* CCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCAppDelegate.m; sourceTree = "<group>"; };
+		E18B6CCF189374EA00968CF5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		E18B6CD2189374EA00968CF5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		E18B6CD4189374EA00968CF5 /* CCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCViewController.h; sourceTree = "<group>"; };
+		E18B6CD5189374EA00968CF5 /* CCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CCViewController.m; sourceTree = "<group>"; };
+		E18B6CD7189374EA00968CF5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		E18B6CDD189374EA00968CF5 /* Community CompostTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Community CompostTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E18B6CDE189374EA00968CF5 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		E18B6CE6189374EA00968CF5 /* Community CompostTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Community CompostTests-Info.plist"; sourceTree = "<group>"; };
+		E18B6CE8189374EA00968CF5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E18B6CEA189374EA00968CF5 /* Community_CompostTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Community_CompostTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E18B6CB6189374EA00968CF5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E18B6CBF189374EA00968CF5 /* CoreGraphics.framework in Frameworks */,
+				E18B6CC1189374EA00968CF5 /* UIKit.framework in Frameworks */,
+				E18B6CBD189374EA00968CF5 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E18B6CDA189374EA00968CF5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E18B6CDF189374EA00968CF5 /* XCTest.framework in Frameworks */,
+				E18B6CE1189374EA00968CF5 /* UIKit.framework in Frameworks */,
+				E18B6CE0189374EA00968CF5 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E18B6CB0189374EA00968CF5 = {
+			isa = PBXGroup;
+			children = (
+				E18B6CC2189374EA00968CF5 /* Community Compost */,
+				E18B6CE4189374EA00968CF5 /* Community CompostTests */,
+				E18B6CBB189374EA00968CF5 /* Frameworks */,
+				E18B6CBA189374EA00968CF5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E18B6CBA189374EA00968CF5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E18B6CB9189374EA00968CF5 /* Community Compost.app */,
+				E18B6CDD189374EA00968CF5 /* Community CompostTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E18B6CBB189374EA00968CF5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E18B6CBC189374EA00968CF5 /* Foundation.framework */,
+				E18B6CBE189374EA00968CF5 /* CoreGraphics.framework */,
+				E18B6CC0189374EA00968CF5 /* UIKit.framework */,
+				E18B6CDE189374EA00968CF5 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E18B6CC2189374EA00968CF5 /* Community Compost */ = {
+			isa = PBXGroup;
+			children = (
+				E18B6CCB189374EA00968CF5 /* CCAppDelegate.h */,
+				E18B6CCC189374EA00968CF5 /* CCAppDelegate.m */,
+				E18B6CCE189374EA00968CF5 /* Main_iPhone.storyboard */,
+				E18B6CD1189374EA00968CF5 /* Main_iPad.storyboard */,
+				E18B6CD4189374EA00968CF5 /* CCViewController.h */,
+				E18B6CD5189374EA00968CF5 /* CCViewController.m */,
+				E18B6CD7189374EA00968CF5 /* Images.xcassets */,
+				E18B6CC3189374EA00968CF5 /* Supporting Files */,
+			);
+			path = "Community Compost";
+			sourceTree = "<group>";
+		};
+		E18B6CC3189374EA00968CF5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E18B6CC4189374EA00968CF5 /* Community Compost-Info.plist */,
+				E18B6CC5189374EA00968CF5 /* InfoPlist.strings */,
+				E18B6CC8189374EA00968CF5 /* main.m */,
+				E18B6CCA189374EA00968CF5 /* Community Compost-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E18B6CE4189374EA00968CF5 /* Community CompostTests */ = {
+			isa = PBXGroup;
+			children = (
+				E18B6CEA189374EA00968CF5 /* Community_CompostTests.m */,
+				E18B6CE5189374EA00968CF5 /* Supporting Files */,
+			);
+			path = "Community CompostTests";
+			sourceTree = "<group>";
+		};
+		E18B6CE5189374EA00968CF5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E18B6CE6189374EA00968CF5 /* Community CompostTests-Info.plist */,
+				E18B6CE7189374EA00968CF5 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E18B6CB8189374EA00968CF5 /* Community Compost */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E18B6CEE189374EA00968CF5 /* Build configuration list for PBXNativeTarget "Community Compost" */;
+			buildPhases = (
+				E18B6CB5189374EA00968CF5 /* Sources */,
+				E18B6CB6189374EA00968CF5 /* Frameworks */,
+				E18B6CB7189374EA00968CF5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Community Compost";
+			productName = "Community Compost";
+			productReference = E18B6CB9189374EA00968CF5 /* Community Compost.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E18B6CDC189374EA00968CF5 /* Community CompostTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E18B6CF1189374EA00968CF5 /* Build configuration list for PBXNativeTarget "Community CompostTests" */;
+			buildPhases = (
+				E18B6CD9189374EA00968CF5 /* Sources */,
+				E18B6CDA189374EA00968CF5 /* Frameworks */,
+				E18B6CDB189374EA00968CF5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E18B6CE3189374EA00968CF5 /* PBXTargetDependency */,
+			);
+			name = "Community CompostTests";
+			productName = "Community CompostTests";
+			productReference = E18B6CDD189374EA00968CF5 /* Community CompostTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E18B6CB1189374EA00968CF5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = CC;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Community Compost";
+				TargetAttributes = {
+					E18B6CDC189374EA00968CF5 = {
+						TestTargetID = E18B6CB8189374EA00968CF5;
+					};
+				};
+			};
+			buildConfigurationList = E18B6CB4189374EA00968CF5 /* Build configuration list for PBXProject "Community Compost" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E18B6CB0189374EA00968CF5;
+			productRefGroup = E18B6CBA189374EA00968CF5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E18B6CB8189374EA00968CF5 /* Community Compost */,
+				E18B6CDC189374EA00968CF5 /* Community CompostTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E18B6CB7189374EA00968CF5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E18B6CD3189374EA00968CF5 /* Main_iPad.storyboard in Resources */,
+				E18B6CD8189374EA00968CF5 /* Images.xcassets in Resources */,
+				E18B6CD0189374EA00968CF5 /* Main_iPhone.storyboard in Resources */,
+				E18B6CC7189374EA00968CF5 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E18B6CDB189374EA00968CF5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E18B6CE9189374EA00968CF5 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E18B6CB5189374EA00968CF5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E18B6CCD189374EA00968CF5 /* CCAppDelegate.m in Sources */,
+				E18B6CC9189374EA00968CF5 /* main.m in Sources */,
+				E18B6CD6189374EA00968CF5 /* CCViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E18B6CD9189374EA00968CF5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E18B6CEB189374EA00968CF5 /* Community_CompostTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E18B6CE3189374EA00968CF5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E18B6CB8189374EA00968CF5 /* Community Compost */;
+			targetProxy = E18B6CE2189374EA00968CF5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E18B6CC5189374EA00968CF5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E18B6CC6189374EA00968CF5 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		E18B6CCE189374EA00968CF5 /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E18B6CCF189374EA00968CF5 /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		E18B6CD1189374EA00968CF5 /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E18B6CD2189374EA00968CF5 /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		E18B6CE7189374EA00968CF5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E18B6CE8189374EA00968CF5 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E18B6CEC189374EA00968CF5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E18B6CED189374EA00968CF5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E18B6CEF189374EA00968CF5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Community Compost/Community Compost-Prefix.pch";
+				INFOPLIST_FILE = "Community Compost/Community Compost-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		E18B6CF0189374EA00968CF5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Community Compost/Community Compost-Prefix.pch";
+				INFOPLIST_FILE = "Community Compost/Community Compost-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		E18B6CF2189374EA00968CF5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Community Compost.app/Community Compost";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Community Compost/Community Compost-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Community CompostTests/Community CompostTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		E18B6CF3189374EA00968CF5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Community Compost.app/Community Compost";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Community Compost/Community Compost-Prefix.pch";
+				INFOPLIST_FILE = "Community CompostTests/Community CompostTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E18B6CB4189374EA00968CF5 /* Build configuration list for PBXProject "Community Compost" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E18B6CEC189374EA00968CF5 /* Debug */,
+				E18B6CED189374EA00968CF5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E18B6CEE189374EA00968CF5 /* Build configuration list for PBXNativeTarget "Community Compost" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E18B6CEF189374EA00968CF5 /* Debug */,
+				E18B6CF0189374EA00968CF5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		E18B6CF1189374EA00968CF5 /* Build configuration list for PBXNativeTarget "Community CompostTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E18B6CF2189374EA00968CF5 /* Debug */,
+				E18B6CF3189374EA00968CF5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E18B6CB1189374EA00968CF5 /* Project object */;
+}
