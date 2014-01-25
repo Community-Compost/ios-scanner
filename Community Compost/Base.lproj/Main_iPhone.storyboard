@@ -17,11 +17,11 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nQv-GL-vft">
-                                <rect key="frame" x="20" y="40" width="280" height="350"/>
+                                <rect key="frame" x="20" y="33" width="280" height="320"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tap Start to read QR Code" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wTU-uP-Ndp">
-                                        <rect key="frame" x="17" y="164" width="247" height="21"/>
+                                        <rect key="frame" x="17" y="152" width="247" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -30,8 +30,8 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="QR Code Reader is not yet running…" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TpE-KP-Vu8">
-                                <rect key="frame" x="20" y="448" width="286" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Scanned Data" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TpE-KP-Vu8">
+                                <rect key="frame" x="17" y="361" width="286" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
@@ -46,9 +46,21 @@
                                             <action selector="startStopReading:" destination="vXZ-lx-hvc" id="jpC-pw-SJF"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="G92-br-fq4"/>
+                                    <barButtonItem title="API Call" id="tKN-zD-7nd">
+                                        <connections>
+                                            <action selector="getUserInfo:" destination="vXZ-lx-hvc" id="AAV-aj-gf7"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="zdY-2I-qMH"/>
                                 </items>
                             </toolbar>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="API Call Results" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V3i-6X-QO5">
+                                <rect key="frame" x="20" y="429" width="280" height="76"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
@@ -56,6 +68,7 @@
                     <connections>
                         <outlet property="bbitemStart" destination="a13-h1-PIa" id="FHa-xH-9eb"/>
                         <outlet property="lblStatus" destination="TpE-KP-Vu8" id="QQq-kh-sba"/>
+                        <outlet property="userInfo" destination="V3i-6X-QO5" id="izo-eC-Pd5"/>
                         <outlet property="viewPreview" destination="nQv-GL-vft" id="SgU-TK-7I8"/>
                     </connections>
                 </viewController>

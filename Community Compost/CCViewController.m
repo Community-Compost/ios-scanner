@@ -146,7 +146,6 @@
 #pragma mark - AVCaptureMetadataOutputObjectsDelegate method implementation
 
 -(void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection{
-    
     // Check if the metadataObjects array is not nil and it contains at least one object.
     if (metadataObjects != nil && [metadataObjects count] > 0) {
         // Get the metadata object.
@@ -168,8 +167,57 @@
             }
         }
     }
-    
-    
 }
+
+#pragma mark - API Call
+
+-(void)getUserInfo:(id)sender {
+    self.userID = @"1234567890";
+    
+    // Create the REST call string.
+    NSString *restCallString = [NSString stringWithFormat:@"http://23.253.86.6:3000/resttest?UserID=%@", self.userID ];
+    
+    // Clear out the return message label
+    self.userInfo.text = @"";
+    
+    // Create the URL to make the rest call.
+    NSURL *restURL = [NSURL URLWithString:restCallString];
+    NSURLRequest *restRequest = [NSURLRequest requestWithURL:restURL];
+
+    // we will want to cancel any current connections
+    if( currentConnection)
+    {
+        [currentConnection cancel];
+        currentConnection = nil;
+        self.apiReturnData = nil;
+    }
+    
+    currentConnection = [[NSURLConnection alloc]   initWithRequest:restRequest delegate:self];
+    
+    // If the connection was successful, create the XML that will be returned.
+    self.apiReturnData = [NSMutableData data];
+}
+
+// Delegates for NSURLConnection
+- (void)connection:(NSURLConnection*)connection didReceiveResponse:(NSURLResponse *)response {
+    [self.apiReturnData setLength:0];
+}
+
+- (void)connection:(NSURLConnection*)connection didReceiveData:(NSData*)data {
+    [self.apiReturnData appendData:data];
+}
+
+- (void)connection:(NSURLConnection*)connection didFailWithError:(NSError*)error {
+    NSLog(@"URL Connection Failed!");
+    currentConnection = nil;
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection {
+    NSLog(@"Connection Finished Loading");
+    NSString *resultString = [[NSString alloc] initWithData:self.apiReturnData encoding:NSASCIIStringEncoding];
+    [_userInfo setText:resultString];
+    currentConnection = nil;
+}
+
 
 @end

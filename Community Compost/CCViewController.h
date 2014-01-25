@@ -9,12 +9,19 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 
-@interface CCViewController : UIViewController <AVCaptureMetadataOutputObjectsDelegate>
+@interface CCViewController : UIViewController <AVCaptureMetadataOutputObjectsDelegate> {
+    NSURLConnection *currentConnection;
+}
+
+@property (weak, nonatomic) IBOutlet UILabel *userInfo;
+@property (copy, nonatomic) NSString *userID;
+@property (retain, nonatomic) NSMutableData *apiReturnData;
 
 @property (weak, nonatomic) IBOutlet UIView *viewPreview;
 @property (weak, nonatomic) IBOutlet UILabel *lblStatus;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *bbitemStart;
 
+- (IBAction)getUserInfo:(id)sender;
 - (IBAction)startStopReading:(id)sender;
 
 @end
