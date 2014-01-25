@@ -155,6 +155,8 @@
             // stop reading and change the bar button item's title and the flag's value.
             // Everything is done on the main thread.
             [_lblStatus performSelectorOnMainThread:@selector(setText:) withObject:[metadataObj stringValue] waitUntilDone:NO];
+            self.userID = [metadataObj stringValue];
+            NSLog(@"User ID: %@", self.userID);
             
             [self performSelectorOnMainThread:@selector(stopReading) withObject:nil waitUntilDone:NO];
             [_bbitemStart performSelectorOnMainThread:@selector(setTitle:) withObject:@"Start!" waitUntilDone:NO];
@@ -172,7 +174,6 @@
 #pragma mark - API Call
 
 -(void)getUserInfo:(id)sender {
-    self.userID = @"1234567890";
     
     // Create the REST call string.
     NSString *restCallString = [NSString stringWithFormat:@"http://23.253.86.6:3000/resttest?UserID=%@", self.userID ];
@@ -214,8 +215,15 @@
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
     NSLog(@"Connection Finished Loading");
-    NSString *resultString = [[NSString alloc] initWithData:self.apiReturnData encoding:NSASCIIStringEncoding];
-    [_userInfo setText:resultString];
+//    NSString *resultString = [[NSString alloc] initWithData:self.apiReturnData encoding:NSASCIIStringEncoding];
+    NSError *jsonError = nil;
+    NSDictionary *result = [NSJSONSerialization JSONObjectWithData:self.apiReturnData options:0 error:&jsonError];
+    NSLog(@"Result: %@", [result valueForKey:@"name"]);
+    if(!jsonError && result) {
+        NSLog(@"Name: %@", [result valueForKey:@"name"]);
+        NSLog(@"Address: %@", [result valueForKey:@"address"]);
+        [_userInfo setText:[result valueForKey:@"name"]];
+    }
     currentConnection = nil;
 }
 
