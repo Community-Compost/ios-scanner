@@ -11,12 +11,10 @@
 @interface ScanViewController ()
 @property (nonatomic, strong) AVCaptureSession *captureSession;
 @property (nonatomic, strong) AVCaptureVideoPreviewLayer *videoPreviewLayer;
-@property (nonatomic, strong) AVAudioPlayer *audioPlayer;
 @property (nonatomic) BOOL isReading;
 
 -(BOOL)startReading;
 -(void)stopReading;
--(void)loadBeepSound;
 @end
 
 @implementation ScanViewController
@@ -38,9 +36,6 @@
     
     // Set the initial value of the flag to NO.
     self.isReading = NO;
-    
-    // Begin loading the sound effect so to have it ready for playback when it's needed.
-    [self loadBeepSound];
     
     if (!_isReading) {
         if ([self startReading]) {
@@ -125,27 +120,6 @@
 
 }
 
-- (void)loadBeepSound {
-    // Get the path to the beep.mp3 file and convert it to a NSURL object.
-    NSString *beepFilePath = [[NSBundle mainBundle] pathForResource:@"beep" ofType:@"mp3"];
-    NSURL *beepURL = [NSURL URLWithString:beepFilePath];
-    
-    NSError *error;
-    
-    // Initialize the audio player object using the NSURL object previously set.
-    _audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:beepURL error:&error];
-    if (error) {
-        // If the audio player cannot be initialized then log a message.
-        NSLog(@"Could not play beep file.");
-        NSLog(@"%@", [error localizedDescription]);
-    }
-    else{
-        // If the audio player was successfully initialized then load it in memory.
-        [_audioPlayer prepareToPlay];
-        NSLog(@"Audio loaded.");
-    }
-}
-
 #pragma mark - AVCaptureMetadataOutputObjectsDelegate method implementation
 
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection {
@@ -164,11 +138,6 @@
             
             _isReading = NO;
             
-            // If the audio player is not nil, then play the sound effect.
-            if (_audioPlayer) {
-                [_audioPlayer play];
-                NSLog(@"Playing sound effect.");
-            }
         }
     }
 }
