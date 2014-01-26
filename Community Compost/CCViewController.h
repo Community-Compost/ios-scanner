@@ -22,10 +22,13 @@
 @property (retain, nonatomic) NSMutableData *apiReturnData;
 
 @property (weak, nonatomic) IBOutlet UIView *viewPreview;
+@property (weak, nonatomic) IBOutlet UIView *viewEntry;
 @property (weak, nonatomic) IBOutlet UILabel *lblStatus;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *scanButton;
 
-- (IBAction)getUserInfo:(id)sender;
+- (void)getUserInfo:(NSString *)binID;
+
+- (IBAction)getButton:(id)sender;
 - (IBAction)updateUserWeight:(id)sender;
 - (IBAction)startStopReading:(id)sender;
 

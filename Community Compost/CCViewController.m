@@ -27,13 +27,16 @@
 	// Do any additional setup after loading the view, typically from a nib.
     
     // Initially make the captureSession object nil.
-    _captureSession = nil;
+    self.captureSession = nil;
     
     // Set the initial value of the flag to NO.
-    _isReading = NO;
+    self.isReading = NO;
     
     // Begin loading the sound effect so to have it ready for playback when it's needed.
     [self loadBeepSound];
+    
+    [self.viewPreview setHidden:TRUE];
+
 }
 
 
@@ -51,8 +54,9 @@
         if ([self startReading]) {
             // If the startReading methods returns YES and the capture session is successfully
             // running, then change the start button title and the status message.
-            [self.scanButton setTitle:@"Stop"];
-            [_lblStatus setText:@"Scanning for QR Code..."];
+            [self.scanButton setTitle:@"Cancel"];
+            [self.viewPreview setHidden:FALSE];
+//            [_lblStatus setText:@"Scanning for QR Code..."];
         }
     }
     else{
@@ -60,6 +64,7 @@
         [self stopReading];
         // The bar button item's title should change again.
         [self.scanButton setTitle:@"Scan"];
+        [self.viewPreview setHidden:TRUE];
     }
     
     // Set to the flag the exact opposite value of the one that currently has.
@@ -113,17 +118,22 @@
     return YES;
 }
 
--(void)stopReading{
+- (void)stopReading{
     // Stop video capture and make the capture session object nil.
     [_captureSession stopRunning];
     _captureSession = nil;
     
     // Remove the video preview layer from the viewPreview view's layer.
     [_videoPreviewLayer removeFromSuperlayer];
+    
+    [self.viewPreview setHidden:TRUE];
+    
+    [self getUserInfo:self.userID];
+
 }
 
 
--(void)loadBeepSound{
+- (void)loadBeepSound{
     // Get the path to the beep.mp3 file and convert it to a NSURL object.
     NSString *beepFilePath = [[NSBundle mainBundle] pathForResource:@"beep" ofType:@"mp3"];
     NSURL *beepURL = [NSURL URLWithString:beepFilePath];
@@ -145,7 +155,7 @@
 
 #pragma mark - AVCaptureMetadataOutputObjectsDelegate method implementation
 
--(void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection{
+- (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection{
     // Check if the metadataObjects array is not nil and it contains at least one object.
     if (metadataObjects != nil && [metadataObjects count] > 0) {
         // Get the metadata object.
@@ -173,7 +183,34 @@
 
 #pragma mark - API Call
 
--(void)getUserInfo:(id)sender {
+- (void)getUserInfo:(NSString *)binID {
+    NSString *restCallString = [NSString stringWithFormat:@"http://compostdenton.com:3000/api/%@", binID ];
+    
+    // Clear out the return message label
+    self.userIDLabel.text = @"";
+    self.userNameLabel.text = @"";
+    self.userAddressLabel.text = @"";
+    self.userWeightLabel.text = @"";
+    
+    // Create the URL to make the rest call.
+    NSURL *restURL = [NSURL URLWithString:restCallString];
+    NSURLRequest *restRequest = [NSURLRequest requestWithURL:restURL];
+    
+    // we will want to cancel any current connections
+    if( currentConnection) {
+        [currentConnection cancel];
+        currentConnection = nil;
+        self.apiReturnData = nil;
+    }
+    
+    currentConnection = [[NSURLConnection alloc]   initWithRequest:restRequest delegate:self];
+    
+    // If the connection was successful, create the XML that will be returned.
+    self.apiReturnData = [NSMutableData data];
+}
+
+
+- (void)getButton:(id)sender {
     
     // Create the REST call string.
     NSString *restCallString = [NSString stringWithFormat:@"http://compostdenton.com:3000/api/%@", self.userID ];
@@ -201,7 +238,7 @@
     self.apiReturnData = [NSMutableData data];
 }
 
--(void)updateUserWeight:(id)sender {
+- (void)updateUserWeight:(id)sender {
     NSURL *url = [NSURL URLWithString:@"http://compostdenton.com:3000/api/1234567890"];
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];

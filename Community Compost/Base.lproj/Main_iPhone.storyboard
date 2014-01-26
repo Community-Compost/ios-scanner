@@ -16,8 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nQv-GL-vft">
-                                <rect key="frame" x="20" y="33" width="280" height="319"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nQv-GL-vft" userLabel="View - Scanner">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
@@ -40,7 +40,7 @@
                                     <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="G92-br-fq4"/>
                                     <barButtonItem title="Get" id="tKN-zD-7nd">
                                         <connections>
-                                            <action selector="getUserInfo:" destination="vXZ-lx-hvc" id="AAV-aj-gf7"/>
+                                            <action selector="getButton:" destination="vXZ-lx-hvc" id="OrL-UP-5or"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="SH6-IL-FTa"/>
