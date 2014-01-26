@@ -13,15 +13,20 @@
     NSURLConnection *currentConnection;
 }
 
-@property (weak, nonatomic) IBOutlet UILabel *userInfo;
+@property (weak, nonatomic) IBOutlet UILabel *userIDLabel;
+@property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *userAddressLabel;
+@property (weak, nonatomic) IBOutlet UILabel *userWeightLabel;
+
 @property (copy, nonatomic) NSString *userID;
 @property (retain, nonatomic) NSMutableData *apiReturnData;
 
 @property (weak, nonatomic) IBOutlet UIView *viewPreview;
 @property (weak, nonatomic) IBOutlet UILabel *lblStatus;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *bbitemStart;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *scanButton;
 
 - (IBAction)getUserInfo:(id)sender;
+- (IBAction)updateUserWeight:(id)sender;
 - (IBAction)startStopReading:(id)sender;
 
 @end

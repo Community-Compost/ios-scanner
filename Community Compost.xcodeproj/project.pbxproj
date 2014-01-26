@@ -23,6 +23,8 @@
 		E18B6CE9189374EA00968CF5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E18B6CE7189374EA00968CF5 /* InfoPlist.strings */; };
 		E18B6CEB189374EA00968CF5 /* Community_CompostTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E18B6CEA189374EA00968CF5 /* Community_CompostTests.m */; };
 		E18B6CF518940CD700968CF5 /* beep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E18B6CF418940CD700968CF5 /* beep.mp3 */; };
+		E18B6D4218946A1E00968CF5 /* ScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E18B6D4118946A1E00968CF5 /* ScanViewController.m */; };
+		E18B6D4518946AA500968CF5 /* EntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E18B6D4418946AA500968CF5 /* EntryViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,10 @@
 		E18B6CE8189374EA00968CF5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E18B6CEA189374EA00968CF5 /* Community_CompostTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Community_CompostTests.m; sourceTree = "<group>"; };
 		E18B6CF418940CD700968CF5 /* beep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = beep.mp3; path = ../../../../Downloads/QRCodeReader/QRCodeReader/beep.mp3; sourceTree = "<group>"; };
+		E18B6D4018946A1E00968CF5 /* ScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanViewController.h; sourceTree = "<group>"; };
+		E18B6D4118946A1E00968CF5 /* ScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanViewController.m; sourceTree = "<group>"; };
+		E18B6D4318946AA500968CF5 /* EntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntryViewController.h; sourceTree = "<group>"; };
+		E18B6D4418946AA500968CF5 /* EntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntryViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +131,10 @@
 				E18B6CD5189374EA00968CF5 /* CCViewController.m */,
 				E18B6CD7189374EA00968CF5 /* Images.xcassets */,
 				E18B6CC3189374EA00968CF5 /* Supporting Files */,
+				E18B6D4018946A1E00968CF5 /* ScanViewController.h */,
+				E18B6D4118946A1E00968CF5 /* ScanViewController.m */,
+				E18B6D4318946AA500968CF5 /* EntryViewController.h */,
+				E18B6D4418946AA500968CF5 /* EntryViewController.m */,
 			);
 			path = "Community Compost";
 			sourceTree = "<group>";
@@ -263,7 +273,9 @@
 			files = (
 				E18B6CCD189374EA00968CF5 /* CCAppDelegate.m in Sources */,
 				E18B6CC9189374EA00968CF5 /* main.m in Sources */,
+				E18B6D4518946AA500968CF5 /* EntryViewController.m in Sources */,
 				E18B6CD6189374EA00968CF5 /* CCViewController.m in Sources */,
+				E18B6D4218946A1E00968CF5 /* ScanViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

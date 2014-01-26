@@ -51,7 +51,7 @@
         if ([self startReading]) {
             // If the startReading methods returns YES and the capture session is successfully
             // running, then change the start button title and the status message.
-            [_bbitemStart setTitle:@"Stop"];
+            [self.scanButton setTitle:@"Stop"];
             [_lblStatus setText:@"Scanning for QR Code..."];
         }
     }
@@ -59,7 +59,7 @@
         // In this case the app is currently reading a QR code and it should stop doing so.
         [self stopReading];
         // The bar button item's title should change again.
-        [_bbitemStart setTitle:@"Start!"];
+        [self.scanButton setTitle:@"Scan"];
     }
     
     // Set to the flag the exact opposite value of the one that currently has.
@@ -159,7 +159,7 @@
             NSLog(@"User ID: %@", self.userID);
             
             [self performSelectorOnMainThread:@selector(stopReading) withObject:nil waitUntilDone:NO];
-            [_bbitemStart performSelectorOnMainThread:@selector(setTitle:) withObject:@"Start!" waitUntilDone:NO];
+            [self.scanButton performSelectorOnMainThread:@selector(setTitle:) withObject:@"Start!" waitUntilDone:NO];
             
             _isReading = NO;
             
@@ -176,18 +176,20 @@
 -(void)getUserInfo:(id)sender {
     
     // Create the REST call string.
-    NSString *restCallString = [NSString stringWithFormat:@"http://23.253.86.6:3000/resttest?UserID=%@", self.userID ];
+    NSString *restCallString = [NSString stringWithFormat:@"http://compostdenton.com:3000/api/%@", self.userID ];
     
     // Clear out the return message label
-    self.userInfo.text = @"";
+    self.userIDLabel.text = @"";
+    self.userNameLabel.text = @"";
+    self.userAddressLabel.text = @"";
+    self.userWeightLabel.text = @"";
     
     // Create the URL to make the rest call.
     NSURL *restURL = [NSURL URLWithString:restCallString];
     NSURLRequest *restRequest = [NSURLRequest requestWithURL:restURL];
-
+    
     // we will want to cancel any current connections
-    if( currentConnection)
-    {
+    if( currentConnection) {
         [currentConnection cancel];
         currentConnection = nil;
         self.apiReturnData = nil;
@@ -197,6 +199,27 @@
     
     // If the connection was successful, create the XML that will be returned.
     self.apiReturnData = [NSMutableData data];
+}
+
+-(void)updateUserWeight:(id)sender {
+    NSURL *url = [NSURL URLWithString:@"http://compostdenton.com:3000/api/1234567890"];
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    
+//    NSString *jsonString = @"bin_id=%@&weight=%@",;
+    NSString *bodydata=[NSString stringWithFormat:@"bin_id=1234567890&weight=2"];
+    
+    NSData *requestBody=[NSData dataWithBytes:[bodydata UTF8String] length:[bodydata length]];
+    
+    [request setHTTPMethod:@"POST"];
+    [request setHTTPBody:requestBody];
+
+    NSURLResponse *response = NULL;
+    NSError *requestError = NULL;
+    
+    NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&requestError];
+    NSString *responseString = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+    NSLog(@"Response: %@", responseString);
 }
 
 // Delegates for NSURLConnection
@@ -215,14 +238,13 @@
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
     NSLog(@"Connection Finished Loading");
-//    NSString *resultString = [[NSString alloc] initWithData:self.apiReturnData encoding:NSASCIIStringEncoding];
     NSError *jsonError = nil;
     NSDictionary *result = [NSJSONSerialization JSONObjectWithData:self.apiReturnData options:0 error:&jsonError];
-    NSLog(@"Result: %@", [result valueForKey:@"name"]);
     if(!jsonError && result) {
-        NSLog(@"Name: %@", [result valueForKey:@"name"]);
-        NSLog(@"Address: %@", [result valueForKey:@"address"]);
-        [_userInfo setText:[result valueForKey:@"name"]];
+        [_userIDLabel setText:[NSString stringWithFormat:@"%@",[result valueForKey:@"bin_id"]]];
+        [_userNameLabel setText:[result valueForKey:@"name"]];
+        [_userAddressLabel setText:[result valueForKey:@"address"]];
+        [_userWeightLabel setText:[NSString stringWithFormat:@"%@",[result valueForKey:@"weight"]]];
     }
     currentConnection = nil;
 }
