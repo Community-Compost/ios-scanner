@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 
 @class ScanViewController;
 
@@ -14,9 +15,13 @@
 - (void)scanViewControllerDidFinish:(ScanViewController *)controller;
 @end
 
-@interface ScanViewController : UIViewController
-
+@interface ScanViewController : UIViewController <AVCaptureMetadataOutputObjectsDelegate> {
+    NSURLConnection *currentConnection;
+}
 @property (weak, nonatomic) id <ScanViewControllerDelegate> delegate;
+
+@property (copy, nonatomic) NSString *binID;
+@property (weak, nonatomic) IBOutlet UIView *viewPreview;
 
 - (IBAction)cancel:(id)sender;
 

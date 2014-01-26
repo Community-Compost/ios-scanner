@@ -14,4 +14,10 @@
 
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
+@property (weak, nonatomic) IBOutlet UILabel *weightLabel;
+
+- (IBAction)numberButtonPressed:(id)sender;
+- (IBAction)clearButtonPressed:(id)sender;
+- (IBAction)unwindToMain:(UIStoryboardSegue *)unwindSegue;
+
 @end

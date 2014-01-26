@@ -286,5 +286,4 @@
     currentConnection = nil;
 }
 
-
 @end

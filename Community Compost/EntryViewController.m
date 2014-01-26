@@ -25,6 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    self.weightLabel.text = @"0.00";
 }
 
 - (void)didReceiveMemoryWarning {
@@ -42,6 +43,26 @@
     if ([[segue identifier] isEqualToString:@"showAlternate"]) {
         [[segue destinationViewController] setDelegate:self];
     }
+}
+
+- (IBAction)numberButtonPressed:(id)sender {
+    NSInteger i = [sender tag];
+    NSString *currentValue = self.weightLabel.text;
+    NSUInteger currentLength = [currentValue length];
+    if (currentLength < 5) {
+        NSString *updatedValue = [currentValue stringByAppendingFormat:@"%ld", (long)i];
+        CGFloat floatValue = (CGFloat)[updatedValue floatValue];
+        self.weightLabel.text = [NSString stringWithFormat:@"%0.2f",floatValue*10];
+    }
+}
+
+- (IBAction)clearButtonPressed:(id)sender {
+    self.weightLabel.text = @"0.00";
+}
+
+- (IBAction)unwindToMain:(UIStoryboardSegue *)unwindSegue {
+    NSLog(@"Unwind");
+//    UIViewController *sourceViewController = unwindSegue.sourceViewController;
 }
 
 @end
