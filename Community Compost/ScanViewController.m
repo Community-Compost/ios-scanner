@@ -133,7 +133,7 @@
             // Everything is done on the main thread.
             self.binID = [metadataObj stringValue];
             NSLog(@"User ID: %@", self.binID);
-            
+            [self.delegate scannedItem:[metadataObj stringValue]];
             [self performSelectorOnMainThread:@selector(stopReading) withObject:nil waitUntilDone:NO];
             
             _isReading = NO;

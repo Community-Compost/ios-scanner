@@ -29,6 +29,7 @@
     self.userNameLabel.text = @"";
     self.userAddressLabel.text = @"";
     self.userWeightLabel.text = @"0";
+    self.userBinID = @"";
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,15 +44,23 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    ScanViewController *vc = [segue destinationViewController];
+    [vc setDelegate:self];
     if ([[segue identifier] isEqualToString:@"showAlternate"]) {
         [[segue destinationViewController] setDelegate:self];
     }
 }
 
-- (IBAction)unwindToMain:(UIStoryboardSegue *)unwindSegue {
+-(void)scannedItem:(NSString *)scannedID
+{
+    self.userBinID = scannedID;
+}
+
+- (IBAction)unwindToMain:(UIStoryboardSegue *)unwindSegue
+{
     NSLog(@"Unwind");
-    [self getUserInfo:@"1234567890"];
-    //    UIViewController *sourceViewController = unwindSegue.sourceViewController;
+    
+    [self getUserInfo:self.userBinID];
 }
 
 #pragma mark - Keypad
@@ -72,8 +81,8 @@
 }
 
 - (IBAction)submitButtonPressed:(id)sender {
-    [self updateUserWeight:@"1234567890"];
-    [self getUserInfo:@"1234567890"];
+    [self updateUserWeight:self.userBinID];
+    [self getUserInfo:self.userBinID];
 }
 
 #pragma mark - API call

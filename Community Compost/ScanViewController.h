@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
+//#import "EntryViewController.h"
 
 @class ScanViewController;
 
 @protocol ScanViewControllerDelegate
 - (void)scanViewControllerDidFinish:(ScanViewController *)controller;
+- (void)scannedItem:(NSString *)scannedID;
 @end
 
 @interface ScanViewController : UIViewController <AVCaptureMetadataOutputObjectsDelegate> {

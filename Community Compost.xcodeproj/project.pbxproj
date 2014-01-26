@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E14163321895777F00062402 /* bin.png in Resources */ = {isa = PBXBuildFile; fileRef = E14163311895777F00062402 /* bin.png */; };
 		E18B6CBD189374EA00968CF5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E18B6CBC189374EA00968CF5 /* Foundation.framework */; };
 		E18B6CBF189374EA00968CF5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E18B6CBE189374EA00968CF5 /* CoreGraphics.framework */; };
 		E18B6CC1189374EA00968CF5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E18B6CC0189374EA00968CF5 /* UIKit.framework */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E14163311895777F00062402 /* bin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bin.png; path = ../../bin.png; sourceTree = "<group>"; };
 		E18B6CB9189374EA00968CF5 /* Community Compost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Community Compost.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E18B6CBC189374EA00968CF5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E18B6CBE189374EA00968CF5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -122,6 +124,7 @@
 		E18B6CC2189374EA00968CF5 /* Community Compost */ = {
 			isa = PBXGroup;
 			children = (
+				E14163311895777F00062402 /* bin.png */,
 				E18B6CF418940CD700968CF5 /* beep.mp3 */,
 				E18B6CCB189374EA00968CF5 /* CCAppDelegate.h */,
 				E18B6CCC189374EA00968CF5 /* CCAppDelegate.m */,
@@ -251,6 +254,7 @@
 				E18B6CD3189374EA00968CF5 /* Main_iPad.storyboard in Resources */,
 				E18B6CF518940CD700968CF5 /* beep.mp3 in Resources */,
 				E18B6CD8189374EA00968CF5 /* Images.xcassets in Resources */,
+				E14163321895777F00062402 /* bin.png in Resources */,
 				E18B6CD0189374EA00968CF5 /* Main_iPhone.storyboard in Resources */,
 				E18B6CC7189374EA00968CF5 /* InfoPlist.strings in Resources */,
 			);
@@ -500,6 +504,7 @@
 				E18B6CF0189374EA00968CF5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E18B6CF1189374EA00968CF5 /* Build configuration list for PBXNativeTarget "Community CompostTests" */ = {
 			isa = XCConfigurationList;
@@ -508,6 +513,7 @@
 				E18B6CF3189374EA00968CF5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

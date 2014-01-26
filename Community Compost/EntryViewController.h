@@ -22,6 +22,7 @@
 //@property (weak, nonatomic) IBOutlet UILabel *userIDLabel;
 @property (weak, nonatomic) IBOutlet UILabel *userWeightLabel;
 @property (retain, nonatomic) NSMutableData *apiReturnData;
+@property (nonatomic) NSString *userBinID;
 
 - (IBAction)numberButtonPressed:(id)sender;
 - (IBAction)clearButtonPressed:(id)sender;
